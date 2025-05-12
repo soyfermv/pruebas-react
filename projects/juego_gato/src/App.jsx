@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TURNS = {
   //turnos
@@ -33,9 +33,15 @@ const Winner_Combos = [
 
 function App() {
   //estado del tablero
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState(()=>{
+    const boardFromStorage = window.localStorage.getItem("board");
+    return boardFromStorage ? JSON.parse(boardFromStorage) : Array(9).fill(null);
+  })
   //estado del turno
-  const [turn, setTurn] = useState(TURNS.X);
+  const [turn, setTurn] = useState(()=>{
+    const turnFromStorage = window.localStorage.getItem("turn");
+    return turnFromStorage ?? TURNS.X;
+  });
   //estado del ganador
   const [winner, setWinner] = useState(null); // null no hay ganador, false es que hay empate
 
@@ -61,6 +67,10 @@ function App() {
     setBoard(Array(9).fill(null));
     setTurn(TURNS.X);
     setWinner(null);
+
+    //borrar el local storage
+    window.localStorage.removeItem("board");
+    window.localStorage.removeItem("turn");
   };
 
   //checar si el juego acaba
@@ -80,6 +90,9 @@ function App() {
     // actualizar el turno
     const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
     setTurn(newTurn);
+    //guardar partida
+    window.localStorage.setItem("board", JSON.stringify(newboard));
+    window.localStorage.setItem("turn", newTurn);
     //revisar si hay un ganador
     const newWinner = checkWinner(newboard);
     if (newWinner) {
@@ -90,9 +103,15 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const boardFromStorage = window.localStorage.getItem("board");
+    const turnFromStorage = window.localStorage.getItem("turn");
+  },[board, turn]);
+
   return (
     <main className="board">
       <h1>Tic Tac Toe</h1>
+      <button onClick={resetGame}>Reiniciar juego</button>
       <section className="game">
         {board.map((square, index) => (
           <Square key={index} index={index} updateBoard={updateBoard}>
