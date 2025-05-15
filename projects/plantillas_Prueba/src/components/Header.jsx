@@ -3,7 +3,7 @@ import '../css/Header.css'; // Ensure you have this CSS file for styling
 const Header = () => {
   return (
     <header className="header">
-      <div className="logo">INMBRIJARIA</div>
+      <div className="logo">inmobiliaria</div>
       <nav className="nav-menu">
         <ul>
           <li><a href="/">Inicio</a></li>

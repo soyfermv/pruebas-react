@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <main className="home-container">
       <section className="demo-section">
-        <h1>DEMO INMBRIJARIA</h1>
+        <h1>DEMO INMOBILIARIA</h1>
         
         <div className="contact-section">
         {
