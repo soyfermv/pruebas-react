@@ -1,6 +1,6 @@
 import React from 'react';
 import PropertyTypeCard from '../components/PropertyTypeCard';
-import './Home.css';
+import 'Home.css';
 
 const Home = () => {
   const popularLocations = [

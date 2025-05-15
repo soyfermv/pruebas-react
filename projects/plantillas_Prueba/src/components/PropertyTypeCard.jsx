@@ -1,5 +1,5 @@
 import React from 'react';
-import './PropertyTypeCard.css';
+import 'PropertyTypeCard.css';
 
 const PropertyTypeCard = ({ type }) => {
   return (
