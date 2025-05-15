@@ -1,6 +1,6 @@
 import React from 'react';
 import PropertyTypeCard from '../components/PropertyTypeCard';
-import 'Home.css';
+import '../components/Footer.css'; // Ensure you have this CSS file for styling
 
 const Home = () => {
   const popularLocations = [
