@@ -1,13 +1,15 @@
-import Header from "./Header";
-import Footer from "./Footer";
-
-export default function LandingLayout({ htmlContent, cssContent }) {
+export default function LandingLayout({ children }) {
   return (
-    <div>
-      <Header />
-      <main dangerouslySetInnerHTML={{ __html: htmlContent }} />
-      <style dangerouslySetInnerHTML={{ __html: cssContent }} />
-      <Footer />
-    </div>
-  );
+    <>
+      <header>
+        <h1>Mi Landing Page</h1>
+      </header>
+      <main>
+        {children}
+      </main>
+      <footer>
+        <p>&copy; 2025 Mi Empresa</p>
+      </footer>
+    </>
+  )
 }

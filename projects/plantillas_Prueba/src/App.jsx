@@ -1,15 +1,17 @@
-import "./App.css";
-import LandingLayout from "./components/LandingLayout";
-import { sanitizeHTML, sanitizeCSS } from "./utils/sanitize";
-
-const rawHTML = `<section><h2>Bienvenido</h2><p>Esta es una landing de prueba.</p></section>`;
-const rawCSS = `h2 { color: darkblue; font-family: sans-serif; }`;
+import React from 'react';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Footer from './components/Footer';
+import './App.css';
 
 function App() {
-  const html = sanitizeHTML(rawHTML);
-  const css = sanitizeCSS(rawCSS);
-
-  return <LandingLayout htmlContent={html} cssContent={css} />;
+  return (
+    <div className="app">
+      <Header />
+      <Home />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

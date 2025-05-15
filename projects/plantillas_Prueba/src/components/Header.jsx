@@ -1,7 +1,27 @@
-export default function Header() {
+import React from 'react';
+import './Header.css';
+
+const Header = () => {
   return (
-    <header style={{ background: "#f5f5f5", padding: "1rem" }}>
-      <h1>Mi Landing Page</h1>
+    <header className="header">
+      <div className="logo">INMBRIJARIA</div>
+      <nav className="nav-menu">
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/inmuebles">Inmuebles</a></li>
+          <li><a href="/desarrollos">Desarrollos</a></li>
+          <li><a href="/mapa">Mapa</a></li>
+          <li><a href="/lotes">Lotes</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/asesores">Asesores</a></li>
+        </ul>
+      </nav>
+      <div className="search">
+        <button>Buscar</button>
+      </div>
     </header>
   );
-}
+};
+
+export default Header;
