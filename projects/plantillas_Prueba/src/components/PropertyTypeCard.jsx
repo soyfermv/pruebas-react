@@ -1,6 +1,5 @@
 import React from 'react';
-import '../components/PropertyTypeCard.css'; // Ensure you have this CSS file for styling
-
+import '../css/PropertyTypeCard.css'; // Assuming you have a CSS file for styling
 const PropertyTypeCard = ({ type }) => {
   return (
     <div className="property-card">

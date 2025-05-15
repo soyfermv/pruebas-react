@@ -1,7 +1,6 @@
 import React from 'react';
 import PropertyTypeCard from '../components/PropertyTypeCard';
-import '../components/Footer.css'; // Ensure you have this CSS file for styling
-
+import '../css/Home.css'; // Ensure you have this CSS file for styling
 const Home = () => {
   const popularLocations = [
     "Chicxulub, Chicxulub Pueblo, Yucatán, México",
@@ -24,6 +23,10 @@ const Home = () => {
         <h1>DEMO INMBRIJARIA</h1>
         
         <div className="contact-section">
+        {
+          //logo de la empresa
+         // <img src="https://img.freepik.com/vector-gratis/logotipo-soluciones-inmobiliarias-hogar-que-es-solucion-hogar_527952-33.jpg?semt=ais_hybrid&w=740" alt="INMBRIJARIA Logo"/>
+        }
           <h2>Contáctenos</h2>
           <p><strong>Oficina Mérida</strong></p>
           <p><strong>Mérida, Yucatán, México</strong></p>
